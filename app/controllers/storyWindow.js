@@ -89,12 +89,12 @@ function setupTransition(transition){
 	}
 }
 function setupNextTransition(loc) {
-	Ti.API.info('Next Loc: '+loc)
+	Ti.API.info('Next Loc: '+loc);
 	// show next
 	$.storyNext.show();
 }
 function setupRandomTransition(loc) {
-	Ti.API.info('Random Loc: '+loc)
+	Ti.API.info('Random Loc: '+loc);
 	// show next
 	$.storyRandom.show();
 }
