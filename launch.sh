@@ -22,7 +22,7 @@ while test $# -gt 0; do
     shift
 done
 
-if [ $android = "yes" ]; then
+if [ "$android" = "yes" ]; then
   titanium build --platform android --build-only --avd-id 1 $DEBUG && \
   adb uninstall $APP_ID
   adb install build/android/bin/app.apk && \
