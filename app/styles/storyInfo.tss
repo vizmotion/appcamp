@@ -1,0 +1,21 @@
+
+".container" : {
+  top:0,
+  width:300,
+  height:90,
+  backgroundColor:'white'
+},
+"#image":{
+	left: 5,
+	top: 5,
+	height: 80,
+	width: 60
+},
+"#name":{
+	left:80,
+	width:Ti.UI.SIZE,
+	height:Ti.UI.SIZE,
+	color:'black',
+	textAlign: 'top'
+}
+

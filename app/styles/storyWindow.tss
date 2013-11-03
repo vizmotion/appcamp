@@ -1,0 +1,50 @@
+
+".container" : {
+  
+},
+"#storyClose" : {
+	left: 0,
+	top: 5,
+	width: 100,
+	title: "CLOSE",
+	height: Ti.UI.SIZE
+},
+"#storyNext" : {
+	right: 0,
+	top: 5,
+	width: 100,
+	title: "NEXT",
+	height: Ti.UI.SIZE,
+	visible: false
+},
+"#storyRandom" : {
+	right: 0,
+	top: 5,
+	width: 100,
+	title: "RANDOM",
+	height: Ti.UI.SIZE,
+	visible: false
+},
+"#storyReplay" : {
+	right: 0,
+	top: 5,
+	width: 100,
+	title: "REPLAY",
+	height: Ti.UI.SIZE,
+	visible: false
+},
+"#storyPassword" : {
+	right: 0,
+	top: 5,
+	width: 100,
+	title: "PASSWORD",
+	height: Ti.UI.SIZE,
+	visible: false
+},
+"#storyWin" : {
+	backgroundColor: Alloy.CFG.backgroundColor
+},
+"#storyView" : {
+	left: 0,
+	top: 60
+}

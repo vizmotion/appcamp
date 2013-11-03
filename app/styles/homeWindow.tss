@@ -1,0 +1,23 @@
+
+"#stories" : {
+	top: 60,
+	left:10,
+	right:10,
+	bottom:10,
+	backgroundColor: "white"
+},
+"#storiesRefresh" :{
+	right: 10,
+	top: 5,
+	width: 100,
+	title: "Refresh",
+	height: Ti.UI.SIZE
+
+},
+"#storiesToggleDisplay" :{
+	top: 5,
+	left: 10,
+	top: 5,
+	title: 'Group',
+	width: 100
+}

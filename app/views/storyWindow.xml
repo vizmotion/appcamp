@@ -1,0 +1,13 @@
+<Alloy>
+	<Window id="storyWin">
+		<View >
+			<Button id="storyClose"  />
+			<Button id="storyNext"  />
+			<Button id="storyRandom"  />
+			<Button id="storyReplay"  />
+			<Button id="storyPassword"  />
+			<WebView id="storyView">
+			</WebView>
+		</View>
+	</Window>
+</Alloy>
