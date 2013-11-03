@@ -5,16 +5,16 @@
 var fake_chapters = [
 	// Chapter 1
 	[
-		{ body: '<html><body><div>Window 0</div></body></html>', transition: createTransitionEntry('next',1) },
-		{ body: '<html><body><div>Window 1</div></body></html>', transition: createTransitionEntry('password',2, "What is the type of animal that has black and white stripes?", "zebra") },
-		{ body: '<html><body><div>Window 2</div></body></html>', transition: createTransitionEntry('random','3,4,5') },
-		{ body: '<html><body><div>Window 3</div></body></html>', transition: createTransitionEntry('next',4) },
-		{ body: '<html><body><div>Window 4</div></body></html>', transition: createTransitionEntry('next',5) },
-		{ body: '<html><body><div>Window 5</div></body></html>', transition: createTransitionEntry('replay',0) }
+		{ body: '<html><body><div><img src=http://www.spiritsoars.com/media/images/cover.jpg width=100><br><br>A woman tells the story of her coming of age</div></body></html>', transition: createTransitionEntry('next',1) },
+		{ body: '<html><body><div>Story starts as she just got on the school bus to middle school</div></body></html>', transition: createTransitionEntry('password',2, "What is the type of animal that has black and white stripes?", "zebra") },
+		{ body: '<html><body><div>She is growing up fast</div></body></html>', transition: createTransitionEntry('random','3,4,5') },
+		{ body: '<html><body><div>She is now in high school and learns about working hard</div></body></html>', transition: createTransitionEntry('next',4) },
+		{ body: '<html><body><div>She is now in college</div></body></html>', transition: createTransitionEntry('next',5) },
+		{ body: '<html><body><div>Would you like to experience it again</div></body></html>', transition: createTransitionEntry('replay',0) }
 	],
 	// Chapter 2
 	[
-		{ body: '<html><body><div>2 Window 0</div></body></html>', transition: createTransitionEntry('next',1) },
+		{ body: '<html><body><div>Fox and the hound meet</div></body></html>', transition: createTransitionEntry('next',1) },
 		{ body: '<html><body><div>2 Window 1</div></body></html>', transition: createTransitionEntry('password',2, "What is the type of animal that has black and white stripes?", "zebra") },
 		{ body: '<html><body><div>2 Window 2</div></body></html>', transition: createTransitionEntry('random','3,4,5') },
 		{ body: '<html><body><div>2 Window 3</div></body></html>', transition: createTransitionEntry('next',4) },

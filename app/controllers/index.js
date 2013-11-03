@@ -15,8 +15,8 @@ function createStory(id) {
 }
 setTimeout(function(param) {
 	var stories = [];
-	stories.push(createStoryEntry(0,'And How My Spirit Soars', 'Story about women coming of age', '/spiritsoars.jpg'));
-	stories.push(createStoryEntry(1,'Fox and Hound', 'Fox makes friend with Hound', '/foxhound.jpg'));
+	stories.push(createStoryEntry(0,'And How My Spirit Soars', 'The story about a woman finding her voice', '/spiritsoars.jpg'));
+	stories.push(createStoryEntry(1,'Fox and Hound', 'A fox makes friends with a hound', '/foxhound.jpg'));
 	
 	Ti.API.info('got stories: ' + JSON.stringify(stories));
 	//Alloy.Globals.stories = stories;
