@@ -117,6 +117,16 @@ exports.setData = function(d){
 	}
 	$.storyView.html = chapters[cur];	
 	setupTransition(cur);
+};
+
+function refreshHtml() {
+	$.storyView.html = currentStory.getCurrentChapter().body;
+	setupTransition(currentStory.getCurrentChapter().transition);
+}
+
+function advanceChapter(next_chapter_id) {
+	currentStory.setNextChapter(next_chapter_id);
+	refreshHtml();
 }
 
 $.storyClose.addEventListener('click', function(e){
