@@ -19,7 +19,8 @@ var fake_chapters = [
 		{ body: '<html><body><div>2 Window 2</div></body></html>', transition: createTransitionEntry('random','3,4,5') },
 		{ body: '<html><body><div>2 Window 3</div></body></html>', transition: createTransitionEntry('next',4) },
 		{ body: '<html><body><div>2 Window 4</div></body></html>', transition: createTransitionEntry('next',5) },
-		{ body: '<html><body><div>2 Window 5</div></body></html>', transition: createTransitionEntry('replay',0) }
+		{ body: '<html><body><div>2 Window 5</div></body></html>', transition: createTransitionEntry('shake',6) },
+		{ body: '<html><body><div>2 Window 6</div></body></html>', transition: createTransitionEntry('replay',0) }
 	]
 ];
 

@@ -6,6 +6,7 @@
 			<Button id="storyRandom"  />
 			<Button id="storyReplay"  />
 			<Button id="storyPassword"  />
+			<Button id="storyShake"  />
 			<WebView id="storyView">
 			</WebView>
 		</View>

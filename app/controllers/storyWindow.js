@@ -19,6 +19,9 @@ function setupTransition(transition){
 		case "password":
 			setupPasswordTransition(transition.param1);
 			break;
+		case "shake":
+			setupShakeTransition(transition.param1);
+			break;
 		default:
 			Ti.API.error("Application logic fell into the void with " + transition.kind);
 	}
@@ -41,6 +44,11 @@ function setupReplayTransition(loc) {
 function setupPasswordTransition(loc) {
 	Ti.API.info('Replay Loc: '+loc);
 	$.storyPassword.setVisible(true);
+}
+function setupShakeTransition(loc) {
+	Ti.API.info('Loc: '+loc);
+	$.storyShake.setVisible(true);
+	Ti.Gesture.addEventListener("shake", shakeEvent);
 }
 
 exports.setData = function(d){
@@ -65,9 +73,11 @@ function hideActionButtons() {
 	$.storyRandom.setVisible(false);
 	$.storyReplay.setVisible(false);
 	$.storyPassword.setVisible(false);
+	$.storyShake.setVisible(false);
 }
 
 $.storyClose.addEventListener('click', function(e){
+	removeShakeEvent();
 	$.storyWin.close();
 });
 
@@ -98,3 +108,11 @@ $.storyPassword.addEventListener('click', function(e){
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 });
 
+function shakeEvent(e){
+	removeShakeEvent();
+	advanceChapter(currentStory.getCurrentChapter().transition.param1);
+}
+
+function removeShakeEvent() {
+	Ti.Gesture.removeEventListener("shake", shakeEvent);
+}

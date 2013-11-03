@@ -41,6 +41,14 @@
 	height: Ti.UI.SIZE,
 	visible: false
 },
+"#storyShake" : {
+	right: 0,
+	top: 5,
+	width: 100,
+	title: "SHAKE!",
+	height: Ti.UI.SIZE,
+	visible: false
+},
 "#storyWin" : {
 	backgroundColor: Alloy.CFG.backgroundColor
 },
