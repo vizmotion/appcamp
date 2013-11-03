@@ -69,16 +69,23 @@ function createTransitionEntry(kind, param1, param2, param3){
 	
 	return obj;
 }
-function setupTransition(id){
-	Ti.API.info("KIND: " + transition[id].kind);
-	if(transition[id].kind == "next") {
-		setupNextTransition(id);
-	} else if (transition[id].kind == "random") {
-		setupRandomTransition(id);
-	} else if (transition[id].kind == "replay") {
-		setupReplayTransition(id);
-	} else if (transition[id].kind == "password") {
-		setupPasswordTransition(id);
+function setupTransition(transition){
+	Ti.API.info("KIND: " + transition.kind);
+	switch (transition.kind) {
+		case "next":
+			setupNextTransition(transition.param1);
+			break;
+		case "random":
+			setupRandomTransition(transition.param1);
+			break;
+		case "replay":
+			setupReplayTransition(transition.param1);
+			break;
+		case "password":
+			setupPasswordTransition(transition.param1);
+			break;
+		default:
+			Ti.API.error("Application logic fell into the void with " + transition.kind);
 	}
 }
 function setupNextTransition(loc) {
