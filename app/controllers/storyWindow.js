@@ -8,6 +8,9 @@ Alloy.Globals.currentchapter.push(0);
 Alloy.Globals.currentchapter.push(0);
 Alloy.Globals.currentchapter.push(0);
 Alloy.Globals.currentchapter.push(0);
+var
+	StoryFixture = require("story_fixture"),
+	currentStory;
 
 // THIS IS TEST STORY
 function createStory1 () {
@@ -108,15 +111,9 @@ function setupPasswordTransition(loc) {
 }
 
 exports.setData = function(d){
-	Ti.API.info("CURRENT CHAPTER: " + JSON.stringify(Alloy.Globals.currentchapter,null,2));
-	Alloy.Globals.currentstoryid = d.storyid;
-	initialStory(d.storyid);
-	cur = getsg();
-	if(chapters[cur]==null) {
-		cur = setsg(0);
-	}
-	$.storyView.html = chapters[cur];	
-	setupTransition(cur);
+	currentStory = StoryFixture.find(d.storyid);
+	Ti.API.info("CURRENT CHAPTER: " + JSON.stringify(currentStory.getCurrentChapter(), null, 2));
+	refreshHtml();
 };
 
 function refreshHtml() {
@@ -137,43 +134,30 @@ $.storyReplay.addEventListener('click', function(e){
 //	alert('currentstoryid: '+Alloy.Globals.currentstoryid+" currentstep: " + JSON.stringify(Alloy.Globals.currentchapter));
 	// hide next
 	$.storyReplay.hide();
-	var cur = getsg();
-	cur = setsg(transition[cur].param1);
-	$.storyView.html = chapters[cur];
-	setupTransition(cur);
+	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 	alert("BEGIN AGAIN");
 });
 
 $.storyNext.addEventListener('click', function(e){
 	$.storyNext.hide();
-	cur = getsg();
-	cur = setsg(transition[cur].param1);
-	$.storyView.html = chapters[cur];
-	setupTransition(cur);
+	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 });
 
 $.storyRandom.addEventListener('click', function(e){
 //	alert('currentstoryid: '+Alloy.Globals.currentstoryid+" currentstep: " + JSON.stringify(Alloy.Globals.currentchapter));
 	// hide next
 	$.storyRandom.hide();
-	var cur = getsg();
-	Ti.API.info("PARAM1: "+ transition[cur].param1);
-	var choice = transition[cur].param1;
-	var choicearray = choice.split(",");
-	var loc = choicearray[Math.floor(Math.random() * choicearray.length)];
-	Ti.API.info("LOC: "+loc)
-	cur = setsg(loc);
-	
-	$.storyView.html = chapters[cur];
-	setupTransition(cur);
+	var transition = currentStory.getCurrentChapter().transition;
+	Ti.API.info("PARAM1: "+ transition.param1);
+	var choices = transition.param1.split(",");
+	var loc = choices[Math.floor(Math.random() * choices.length)];
+	Ti.API.info("LOC: "+loc);
+	advanceChapter(loc);
 });
 
 $.storyPassword.addEventListener('click', function(e){
 	$.storyPassword.hide();
-	var cur = getsg();
-	var trans = transition
-	cur = setsg(transition[cur].param1);
-	$.storyView.html = chapters[cur];
-	setupTransition(cur);
+	// TODO: get password and varify
+	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 });
 
