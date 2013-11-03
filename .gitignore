@@ -5,3 +5,4 @@ tmp
 .map
 build/
 Resources/
+.fastdev.lock
