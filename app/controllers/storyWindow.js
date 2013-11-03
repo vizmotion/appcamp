@@ -2,6 +2,8 @@ var
 	StoryFixture = require("story_fixture"),
 	currentStory;
 
+$.storyInfoView.setTop(Alloy.Globals.windowTop);
+
 function setupTransition(transition){
 	Ti.API.info("KIND: " + transition.kind);
 	switch (transition.kind) {

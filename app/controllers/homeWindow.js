@@ -1,6 +1,8 @@
 
 var stories = null;
 
+$.storyView.setTop(Alloy.Globals.windowTop);
+
 exports.setStories = function(data){
 //	Ti.API.info('in set stories');
 	stories = data;

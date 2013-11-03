@@ -1,6 +1,6 @@
 <Alloy>
 	<Window id="storyWin">
-		<View >
+		<View id="storyInfoView">
 			<Button id="storyClose"  />
 			<Button id="storyNext"  />
 			<Button id="storyRandom"  />

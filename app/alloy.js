@@ -12,3 +12,28 @@
 Alloy.Globals.stories = [];
 Alloy.Globals.storyid = '';
 Alloy.Globals.currentchapter = [];
+
+Alloy.Globals.windowTop = (function() {
+	var version, windowTops;
+
+	// Look up table
+	windowTops = {
+		android: 0,
+		ios:     0,
+		ios7:    20
+	};
+
+	if (OS_IOS) {
+		version = Ti.Platform.version.split(".");
+		// Assume version returns valid int values. Won't try/catch
+		if (parseInt(version[0], 10) > 6) {
+			return windowTops.ios7;
+		}
+		else {
+			return windowTops.ios;
+		}
+	}
+	else {
+		return windowTops.android;
+	}
+})();

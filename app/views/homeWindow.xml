@@ -1,6 +1,6 @@
 <Alloy>
 	<Window>
-		<View>
+		<View id="storyView">
 			<Button id="storiesRefresh"  />
 			<Button id="storiesToggleDisplay"  />
 			<TableView id="stories">
