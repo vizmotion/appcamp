@@ -48,6 +48,7 @@ exports.setData = function(d){
 };
 
 function refreshHtml() {
+	hideActionButtons();
 	$.storyView.html = currentStory.getCurrentChapter().body;
 	setupTransition(currentStory.getCurrentChapter().transition);
 }
@@ -57,6 +58,13 @@ function advanceChapter(next_chapter_id) {
 	refreshHtml();
 }
 
+function hideActionButtons() {
+	$.storyNext.setVisible(false);
+	$.storyRandom.setVisible(false);
+	$.storyReplay.setVisible(false);
+	$.storyPassword.setVisible(false);
+}
+
 $.storyClose.addEventListener('click', function(e){
 	$.storyWin.close();
 });
@@ -64,20 +72,17 @@ $.storyClose.addEventListener('click', function(e){
 $.storyReplay.addEventListener('click', function(e){
 //	alert('currentstoryid: '+Alloy.Globals.currentstoryid+" currentstep: " + JSON.stringify(Alloy.Globals.currentchapter));
 	// hide next
-	$.storyReplay.setVisible(false);
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 	alert("BEGIN AGAIN");
 });
 
 $.storyNext.addEventListener('click', function(e){
-	$.storyNext.setVisible(false);
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 });
 
 $.storyRandom.addEventListener('click', function(e){
 //	alert('currentstoryid: '+Alloy.Globals.currentstoryid+" currentstep: " + JSON.stringify(Alloy.Globals.currentchapter));
 	// hide next
-	$.storyRandom.setVisible(false);
 	var transition = currentStory.getCurrentChapter().transition;
 	Ti.API.info("PARAM1: "+ transition.param1);
 	var choices = transition.param1.split(",");
@@ -87,7 +92,6 @@ $.storyRandom.addEventListener('click', function(e){
 });
 
 $.storyPassword.addEventListener('click', function(e){
-	$.storyPassword.setVisible(false);
 	// TODO: get password and varify
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 });
