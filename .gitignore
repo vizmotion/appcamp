@@ -6,3 +6,4 @@ tmp
 build/
 Resources/
 .fastdev.lock
+node_modules/
