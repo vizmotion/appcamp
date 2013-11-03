@@ -77,7 +77,6 @@ function hideActionButtons() {
 }
 
 $.storyClose.addEventListener('click', function(e){
-	removeShakeEvent();
 	$.storyWin.close();
 });
 
