@@ -47,6 +47,7 @@
 	width: 100,
 	title: "SHAKE!",
 	height: Ti.UI.SIZE,
+	enabled: false,
 	visible: false
 },
 "#storyWin" : {

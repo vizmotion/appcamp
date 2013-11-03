@@ -111,6 +111,7 @@ $.storyPassword.addEventListener('click', function(e){
 function shakeEvent(e){
 	removeShakeEvent();
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
+	alert("New chapter unloced!");
 }
 
 function removeShakeEvent() {
