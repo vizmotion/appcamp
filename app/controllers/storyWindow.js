@@ -24,20 +24,21 @@ function setupTransition(transition){
 function setupNextTransition(loc) {
 	Ti.API.info('Next Loc: '+loc);
 	// show next
-	$.storyNext.show();
+	// $.storyNext.show();
+	$.storyNext.setVisible(true);
 }
 function setupRandomTransition(loc) {
 	Ti.API.info('Random Loc: '+loc);
 	// show next
-	$.storyRandom.show();
+	$.storyRandom.setVisible(true);
 }
 function setupReplayTransition(loc) {
 	Ti.API.info('Replay Loc: '+loc);
-	$.storyReplay.show();
+	$.storyReplay.setVisible(true);
 }
 function setupPasswordTransition(loc) {
 	Ti.API.info('Replay Loc: '+loc);
-	$.storyPassword.show();
+	$.storyPassword.setVisible(true);
 }
 
 exports.setData = function(d){
@@ -63,20 +64,20 @@ $.storyClose.addEventListener('click', function(e){
 $.storyReplay.addEventListener('click', function(e){
 //	alert('currentstoryid: '+Alloy.Globals.currentstoryid+" currentstep: " + JSON.stringify(Alloy.Globals.currentchapter));
 	// hide next
-	$.storyReplay.hide();
+	$.storyReplay.setVisible(false);
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 	alert("BEGIN AGAIN");
 });
 
 $.storyNext.addEventListener('click', function(e){
-	$.storyNext.hide();
+	$.storyNext.setVisible(false);
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 });
 
 $.storyRandom.addEventListener('click', function(e){
 //	alert('currentstoryid: '+Alloy.Globals.currentstoryid+" currentstep: " + JSON.stringify(Alloy.Globals.currentchapter));
 	// hide next
-	$.storyRandom.hide();
+	$.storyRandom.setVisible(false);
 	var transition = currentStory.getCurrentChapter().transition;
 	Ti.API.info("PARAM1: "+ transition.param1);
 	var choices = transition.param1.split(",");
@@ -86,7 +87,7 @@ $.storyRandom.addEventListener('click', function(e){
 });
 
 $.storyPassword.addEventListener('click', function(e){
-	$.storyPassword.hide();
+	$.storyPassword.setVisible(false);
 	// TODO: get password and varify
 	advanceChapter(currentStory.getCurrentChapter().transition.param1);
 });
