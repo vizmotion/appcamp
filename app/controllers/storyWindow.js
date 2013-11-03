@@ -1,77 +1,7 @@
-var data = null;
-var chapters = [];
-var transition = [];
-Alloy.Globals.currentchapter.push(0);
-Alloy.Globals.currentchapter.push(0);
-Alloy.Globals.currentchapter.push(0);
-Alloy.Globals.currentchapter.push(0);
-Alloy.Globals.currentchapter.push(0);
-Alloy.Globals.currentchapter.push(0);
-Alloy.Globals.currentchapter.push(0);
 var
 	StoryFixture = require("story_fixture"),
 	currentStory;
 
-// THIS IS TEST STORY
-function createStory1 () {
-	chapters = [];
-	transition = [];
-
-	chapters[0] = '<html><body><div>Window 0</div></body></html>';
-	transition[0] = createTransitionEntry('next',1);
-	chapters[1] = '<html><body><div>Window 1</div></body></html>';
-	transition[1] = createTransitionEntry('password',2, "What is the type of animal that has black and white stripes?", "zebra");
-	chapters[2] = '<html><body><div>Window 2</div></body></html>';
-	transition[2] = createTransitionEntry('random','3,4,5');
-	chapters[3] = '<html><body><div>Window 3</div></body></html>';
-	transition[3] = createTransitionEntry('next',4);
-	chapters[4] = '<html><body><div>Window 4</div></body></html>';
-	transition[4] = createTransitionEntry('next',5);
-	chapters[5] = '<html><body><div>Window 5</div></body></html>';
-	transition[5] = createTransitionEntry('replay',0);
-}
-function createStory2 () {
-	chapters = [];
-	transition = [];
-
-	chapters[0] = '<html><body><div>2 Window 0</div></body></html>';
-	transition[0] = createTransitionEntry('next',1);
-	chapters[1] = '<html><body><div>2 Window 1</div></body></html>';
-	transition[1] = createTransitionEntry('password',2, "What is the type of animal that has black and white stripes?", "zebra");
-	chapters[2] = '<html><body><div>2 Window 2</div></body></html>';
-	transition[2] = createTransitionEntry('random','3,4,5');
-	chapters[3] = '<html><body><div>2 Window 3</div></body></html>';
-	transition[3] = createTransitionEntry('next',4);
-	chapters[4] = '<html><body><div>2 Window 4</div></body></html>';
-	transition[4] = createTransitionEntry('next',5);
-	chapters[5] = '<html><body><div>2 Window 5</div></body></html>';
-	transition[5] = createTransitionEntry('replay',0);
-}
-function initialStory(id) {
-	if(id == 1) {
-		createStory1();
-	} else {
-		createStory2();
-	}
-	
-}
-// story globals
-function setsg(val) {
-	Alloy.Globals.currentchapter[Alloy.Globals.currentstoryid] = val;
-	return(val);
-}
-function getsg() {
-	return(Alloy.Globals.currentchapter[Alloy.Globals.currentstoryid]);
-}
-function createTransitionEntry(kind, param1, param2, param3){
-	var obj = {};
-	obj.kind = kind;
-	obj.param1 = param1;
-	obj.param2 = param2;
-	obj.param3 = param3;
-	
-	return obj;
-}
 function setupTransition(transition){
 	Ti.API.info("KIND: " + transition.kind);
 	switch (transition.kind) {
