@@ -1,6 +1,6 @@
 {
 	"global": {
-		"backgroundColor":"blue"
+		"backgroundColor":"white"
 	}, 
 	"env:development": {}, 
 	"env:test": {}, 
