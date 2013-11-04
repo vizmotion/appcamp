@@ -1,4 +1,5 @@
 $.index.open();
+//debugger;
 
 function createStoryEntry(id, name, description, image){
 	var obj = {};
